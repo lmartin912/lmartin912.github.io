@@ -45,3 +45,11 @@ function updateStars() {
 }
 
 setInterval(drawStars, 40);
+
+/* MUSIC TOGGLE WITH LETTER A */
+document.addEventListener("keydown", (e) => {
+    if (e.key.toLowerCase() === "a") {
+        playing ? music.pause() : music.play();
+        playing = !playing;
+    }
+});
