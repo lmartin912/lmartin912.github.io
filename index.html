@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaVesta Martin</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaVesta Martin</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- STAR CANVAS BACKGROUND -->
 <canvas id="starsCanvas"></canvas>
 
+<!-- MUSIC BUTTON -->
+<button id="musicToggle" class="music-btn">🎧</button>
+
+<!-- PROFILE PHOTO -->
+<div class="profile-wrapper">
+    <img src="profile.jpg" class="profile-photo" alt="LaVesta Martin">
+</div>
+
+<!-- MAIN TITLE -->
 <div class="glitch" data-text="LaVesta Martin">LaVesta Martin</div>
 <p class="tagline">Building in Tech. Learning. Glowing. Securing.</p>
 
+<!-- HEADER BUTTONS -->
 <div class="buttons">
-    <a class="btn neon" href="https://github.com/lmartin912" target="_blank" rel="noopener">GitHub</a>
-    <a class="btn neon" href="https://www.linkedin.com/in/ljmartin1000/" target="_blank" rel="noopener">LinkedIn</a>
-    <a class="btn neon" href="#" id="resumeBtn">Resume</a>
+    <a class="btn neon" href="https://github.com/lmartin912" target="_blank">GitHub</a>
+    <a class="btn neon" href="https://www.linkedin.com/in/ljmartin1000/" target="_blank">LinkedIn</a>
+    <a class="btn neon" href="blog.html">Blog / Notes</a>
 </div>
 
+<!-- ABOUT SECTION -->
 <section class="about-box">
     <h2>About Me</h2>
     <p>
@@ -29,10 +41,42 @@
     <p class="highlight">✨ Cybersecurity | Linux | Python | Networking | Ethical Tech ✨</p>
 </section>
 
+<!-- PROJECTS -->
+<section class="projects-box">
+<h2>Projects</h2>
+
+<div class="project-grid">
+
+<div class="project-card">
+<h3>🔐 Encryption Script</h3>
+<p>Python Caesar cipher encryption/decryption tool.</p>
+<a class="project-btn" href="https://github.com/lmartin912" target="_blank">View</a>
+</div>
+
+<div class="project-card">
+<h3>🐧 Linux Commands Guide</h3>
+<p>Beginner-friendly Linux cheat sheet for cybersecurity students.</p>
+<a class="project-btn" href="blog.html" target="_blank">Learn</a>
+</div>
+
+<div class="project-card">
+<h3>🌐 Personal Website</h3>
+<p>Cyber pink neon portfolio hosted on GitHub Pages.</p>
+<a class="project-btn" href="https://lmartin912.github.io" target="_blank">Live</a>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-    <p>© 2025 LaVesta Martin</p>
+<p>© 2025 LaVesta Martin — Powered by Glow & Cyber 💖</p>
 </footer>
 
 <script src="script.js"></script>
+<audio id="bgMusic" loop>
+<source src="https://files.catbox.moe/ew3x4t.mp3" type="audio/mpeg">
+</audio>
+
 </body>
 </html>
