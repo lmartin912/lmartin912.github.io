@@ -73,3 +73,10 @@ canvas#starsCanvas {
 
 /********* FOOTER *********/
 footer{text-align:center; padding:20px; color:#ff7ddb;}
+
+.sparkle{
+  width:6px;height:6px;position:absolute;border-radius:50%;
+  background:#ff00c8;box-shadow:0 0 8px #ff00c8;pointer-events:none;
+  animation:spark .6s linear;
+}
+@keyframes spark{to{opacity:0;transform:scale(2);}}
