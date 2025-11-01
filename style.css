@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    background-color: #080010;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Cyber stars background */
+.stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 
+        1000px 800px #ff00c8,
+        200px 100px #ff4ad8,
+        500px 300px #ff00c8,
+        1200px 600px #ff4ad8,
+        800px 400px #ff00c8;
+    animation: animStar 50s linear infinite;
+}
+
+@keyframes animStar {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-2000px); }
+}
+
+.container {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+/* Neon title */
+.neon-title {
+    font-size: 3.2rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px #ff00c8, 0 0 30px #ff00c8, 0 0 60px #ff00c8;
+    color: #ff4ad8;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin-top: -5px;
+    color: #ffb6f3;
+}
+
+/* Buttons */
+.buttons {
+    margin: 25px 0;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1rem;
+    margin: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.neon-btn {
+    color: #fff;
+    border: 2px solid #ff00c8;
+    box-shadow: 0 0 10px #ff00c8, inset 0 0 10px #ff00c8;
+    transition: 0.3s;
+}
+
+.neon-btn:hover {
+    background: #ff00c8;
+    box-shadow: 0 0 15px #ff00c8, 0 0 30px #ff00c8;
+}
+
+/* About box */
+.about-box {
+    background: rgba(255, 0, 200, 0.08);
+    border: 1px solid #ff4ad8;
+    box-shadow: 0 0 12px #ff00c8;
+    border-radius: 12px;
+    padding: 25px;
+    width: 80%;
+    margin: auto;
+    max-width: 700px;
+}
+
+.about-box h2 {
+    color: #ff4ad8;
+    text-shadow: 0 0 8px #ff00c8;
+}
+
+.highlight {
+    font-weight: 600;
+    color: #ff8be7;
+}
