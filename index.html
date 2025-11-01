@@ -1,35 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaVesta Martin</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LaVesta Martin — Cyber Portfolio</title>
+  <meta name="description" content="LaVesta Martin — Building in Tech. Learning. Glowing. Securing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Floating particles + glitter cursor canvases -->
+  <canvas id="bgParticles" aria-hidden="true"></canvas>
+  <canvas id="cursorTrail" aria-hidden="true"></canvas>
 
-<div class="stars"></div>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<div class="container">
-    <h1 class="neon-title">LaVesta Martin</h1>
-    <p class="tagline">Building in Tech. Learning. Glowing. Securing.</p>
-
-    <div class="buttons">
-        <a href="https://github.com/lmartin912" class="btn neon-btn">GitHub</a>
-        <a href="#" class="btn neon-btn">LinkedIn</a>
-        <a href="#" class="btn neon-btn">Resume</a>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo-dot"></span>
+      <span class="brand-text">LaVesta</span>
     </div>
+    <nav class="nav">
+      <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="navLinks">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <ul id="navLinks">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#notes" class="nav-link">Blog/Notes</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <a class="btn neon small" href="assets/resume.pdf" target="_blank" rel="noopener">
+            💾 Resume
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="about-box">
-        <h2>About Me</h2>
-        <p>
+  <main id="main">
+    <!-- Hero -->
+    <section id="home" class="hero section">
+      <div class="hero-inner">
+        <h1 class="neon-title">
+          <span class="glitch" data-text="LaVesta Martin">LaVesta Martin</span>
+        </h1>
+        <p class="tagline">
+          <span id="typed"></span>
+          <span class="cursor">▌</span>
+        </p>
+
+        <div class="cta-row">
+          <a class="btn neon" href="https://github.com/lmartin912" target="_blank" rel="noopener">
+            <!-- GitHub SVG -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 0 12.7c0 5.4 3.4 10 8.2 11.6.6.1.8-.3.8-.6v-2.2c-3.3.8-4-1.6-4-1.6-.6-1.4-1.4-1.7-1.4-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.4-5.3-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.2 11.2 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.7-5.3 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12.2 12.2 0 0 0 24 12.7 12 12 0 0 0 12 .5Z"/></svg>
+            GitHub
+          </a>
+          <a class="btn neon" href="#" id="linkedinLink">
+            <!-- LinkedIn SVG -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-.9 1.7-1.9 3.5-1.9 3.8 0 4.5 2.5 4.5 5.7V21h-4v-5.4c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9V21H9z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn neon" href="assets/resume.pdf" target="_blank" rel="noopener">
+            <!-- Download icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2Zm7-18v10.17l3.59-3.58L17 10l-5 5-5-5 1.41-1.41L11 12.17V2h1Z"/></svg>
+            Resume
+          </a>
+        </div>
+
+        <div class="about-box">
+          <h2>About Me</h2>
+          <p>
             Hi! I'm LaVesta — a cybersecurity and technology student passionate about securing digital spaces,
             learning modern tech skills, and empowering women in tech. I explore cybersecurity, digital privacy,
             and ethical technology while documenting my growth and journey into tech.
-        </p>
-        <p class="highlight">✨ Cybersecurity | Linux | Python | Networking | Ethical Tech ✨</p>
-    </div>
-</div>
+          </p>
+          <p class="highlight">✨ Cybersecurity | Linux | Python | Networking | Ethical Tech ✨</p>
+        </div>
+      </div>
+    </section>
 
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2 class="section-title">Projects</h2>
+      <div class="cards">
+        <!-- Card 1 -->
+        <article class="card">
+          <h3>Caesar Cipher Tool</h3>
+          <p>Simple Python tool to encrypt/decrypt with adjustable shift; includes CLI and examples.</p>
+          <div class="card-actions">
+            <a class="btn ghost" href="https://github.com/lmartin912" target="_blank" rel="noopener">View Repo</a>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="card">
+          <h3>Nmap Cheat Sheet</h3>
+          <p>My go-to flags for discovery, service/version detection, scripts, and common workflows.</p>
+          <div class="card-actions">
+            <a class="btn ghost" href="https://github.com/lmartin912" target="_blank" rel="noopener">View Repo</a>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="card">
+          <h3>Linux Admin Notes</h3>
+          <p>Essential Linux commands for cybersecurity students: users, perms, SSH, process mgmt, and more.</p>
+          <div class="card-actions">
+            <a class="btn ghost" href="https://github.com/lmartin912" target="_blank" rel="noopener">View Repo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Blog / Notes -->
+    <section id="notes" class="section">
+      <h2 class="section-title">Blog / Notes</h2>
+      <div class="notes-list">
+        <article class="note">
+          <time>2025-11-01</time>
+          <h3>Intro to My Cyber Journey</h3>
+          <p>Why I'm building in public and what I’m learning this semester.</p>
+        </article>
+        <article class="note">
+          <time>2025-11-01</time>
+          <h3>Wireshark Filters I Use Weekly</h3>
+          <p>Quick matches for http, tls, dns, and suspicious traffic patterns.</p>
+        </article>
+        <article class="note">
+          <time>2025-11-01</time>
+          <h3>Favorite Linux Aliases</h3>
+          <p>Quality-of-life aliases for grep, ls, and git.</p>
+        </article>
+      </div>
+      <p class="note-tip">Tip: turn each note into its own Markdown file later, or link to posts on GitHub.</p>
+    </section>
+
+    <!-- Contact / Socials -->
+    <section id="contact" class="section">
+      <h2 class="section-title">Connect</h2>
+      <div class="socials">
+        <a class="icon-btn" href="mailto:your.email@example.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://github.com/lmartin912" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 0 12.7c0 5.4 3.4 10 8.2 11.6.6.1.8-.3.8-.6v-2.2c-3.3.8-4-1.6-4-1.6-.6-1.4-1.4-1.7-1.4-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.4-5.3-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.2 11.2 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.7-5.3 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12.2 12.2 0 0 0 24 12.7 12 12 0 0 0 12 .5Z"/></svg>
+        </a>
+        <a class="icon-btn" href="#" id="linkedinIcon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-.9 1.7-1.9 3.5-1.9 3.8 0 4.5 2.5 4.5 5.7V21h-4v-5.4c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9V21H9z"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> LaVesta Martin • Made with pink cyber-neon ✨</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
