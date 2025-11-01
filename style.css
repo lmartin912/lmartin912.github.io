@@ -1,178 +1,98 @@
-/* ===== Base ===== */
-:root{
-  --bg: #0b0613;
-  --panel: #1a1025;
-  --neon: #ff00c8;
-  --neon-soft: #ff4ad8;
-  --text: #ffffff;
-  --muted: #d7a9e8;
-  --shadow: 0 0 12px var(--neon), 0 0 24px var(--neon);
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background: radial-gradient(1200px 600px at 50% -10%, rgba(255,0,200,.15), transparent 60%),
-              radial-gradient(800px 400px at -10% 30%, rgba(255,74,216,.1), transparent 60%),
-              var(--bg);
-  color:var(--text);
-  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  line-height:1.6;
-  overflow-x:hidden;
-}
-.skip-link{position:absolute;left:-9999px;top:auto}
-.skip-link:focus{left:1rem;top:1rem;background:#000;color:#fff;padding:.5rem 1rem;border-radius:.5rem;z-index:9999}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* Canvases behind everything */
-#bgParticles, #cursorTrail{
-  position:fixed; inset:0; width:100%; height:100%;
-  display:block; z-index:-1;
+body {
+    margin: 0;
+    background: #080012;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    color: #fff;
 }
 
-/* ===== Header / Nav ===== */
-.site-header{
-  position:sticky; top:0; z-index:50;
-  backdrop-filter: blur(8px);
-  background: rgba(11,6,19,.45);
-  border-bottom: 1px solid rgba(255,0,200,.15);
+/* Floating cyber stars background */
+canvas#starsCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
-.site-header .brand{
-  display:flex; align-items:center; gap:.6rem;
-  padding: .8rem 1.2rem;
-  font-family:'Space Grotesk', sans-serif; font-weight:700; letter-spacing:.5px;
-}
-.logo-dot{width:10px;height:10px;border-radius:50%;box-shadow:0 0 12px var(--neon);background:var(--neon)}
-.brand-text{color:var(--muted)}
 
-.nav{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto}
-#navLinks{display:flex;align-items:center;gap:1rem;list-style:none;margin:0;padding:.6rem 1.2rem}
-.nav-link{color:#e8d7f3;text-decoration:none;opacity:.9;padding:.4rem .6rem;border-radius:.5rem;transition:.3s}
-.nav-link:hover{box-shadow:0 0 8px rgba(255,0,200,.6); background:rgba(255,0,200,.1)}
-.menu-toggle{display:none;margin-right:1rem;background:transparent;border:0}
-.menu-toggle .bar{display:block;width:22px;height:2px;background:#fff;margin:5px 0;border-radius:1px}
+/* Neon glitch title */
+.glitch {
+    margin-top: 120px;
+    font-size: 3.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: #ff4ad8;
+    text-shadow: 0 0 12px #ff00c8, 0 0 40px #ff00c8;
+}
 
-/* ===== Hero ===== */
-.section{padding:80px 20px}
-.hero{min-height:68vh;display:grid;place-items:center;text-align:center}
-.hero-inner{max-width:900px;margin:0 auto}
-.neon-title{
-  font-size: clamp(2.4rem, 4vw + 1rem, 4.25rem);
-  color: var(--neon-soft);
-  text-shadow: 0 0 10px var(--neon), 0 0 30px var(--neon), 0 0 60px var(--neon);
-  margin:0 0 .4rem;
+/* Tagline */
+.tagline {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ffb6f3;
+    margin-top: -10px;
 }
-.glitch{
-  position:relative; display:inline-block; letter-spacing:.5px;
-  filter: drop-shadow(0 0 6px var(--neon));
-}
-.glitch::before, .glitch::after{
-  content: attr(data-text);
-  position:absolute; left:0; top:0; mix-blend-mode:screen; opacity:.7;
-}
-.glitch::before{transform: translate(2px, 0); color:#ff67da; text-shadow:-2px 0 #ff67da}
-.glitch::after{transform: translate(-2px, 0); color:#c300ff; text-shadow:2px 0 #c300ff}
-@keyframes glitchFlicker {
-  0%, 10%, 20%, 30%, 100% {opacity:1}
-  5%, 15%, 25% {opacity:.75}
-}
-.glitch{animation: glitchFlicker 3s infinite}
-
-.tagline{font-size:1.1rem;color:#ffd6fb;margin:0 0 1.4rem}
-.cursor{animation: blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:8px 0 24px}
 
 /* Buttons */
-.btn{
-  --ring: 0 0 0 0 rgba(255,0,200,.4);
-  display:inline-flex;align-items:center;gap:8px;
-  padding:12px 18px;border-radius:999px;border:2px solid var(--neon);
-  color:#fff;text-decoration:none;font-weight:600;
-  background: radial-gradient(circle at 30% 30%, rgba(255,0,200,.2), rgba(255,0,200,.05) 60%);
-  box-shadow: inset 0 0 12px rgba(255,0,200,.6), 0 0 14px rgba(255,0,200,.6);
-  transition: transform .12s ease, box-shadow .25s ease;
+.buttons {
+    margin-top: 20px;
+    text-align: center;
 }
-.btn.small{padding:8px 14px;font-size:.92rem}
-.btn svg{width:18px;height:18px;fill:#fff}
-.btn:hover{transform: translateY(-2px); box-shadow: var(--shadow)}
-.btn:active{transform: translateY(0)}
-.btn.ghost{
-  background: transparent; border-color: rgba(255,0,200,.6);
-  box-shadow: inset 0 0 0 rgba(255,0,200,0), 0 0 10px rgba(255,0,200,.35);
+
+.btn {
+    padding: 12px 28px;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.neon {
+    border: 2px solid #ff00c8;
+    box-shadow: 0 0 12px #ff00c8, inset 0 0 12px #ff00c8;
+    color: white;
+    transition: .25s;
+}
+
+.neon:hover {
+    background: #ff00c8;
+    box-shadow: 0 0 18px #ff00c8, 0 0 40px #ff00c8;
 }
 
 /* About box */
-.about-box{
-  background: rgba(255,0,200,.06);
-  border:1px solid rgba(255,0,200,.4);
-  border-radius:16px; padding:24px; margin:18px auto 0; max-width:780px;
-  box-shadow: 0 0 18px rgba(255,0,200,.25);
-}
-.about-box h2{color:var(--neon-soft); text-shadow:0 0 8px var(--neon)}
-.highlight{font-weight:700;color:#ffb7f0}
-
-/* Section titles */
-.section-title{
-  text-align:center; margin:0 auto 22px; font-size:2rem; color:#ffd6fb;
-  text-shadow: 0 0 8px rgba(255,0,200,.65);
+.about-box {
+    max-width: 760px;
+    margin: 60px auto;
+    padding: 28px;
+    background: rgba(255, 0, 200, 0.09);
+    border: 1px solid #ff4ad8;
+    box-shadow: 0 0 18px #ff00c8;
+    border-radius: 14px;
+    text-align: center;
 }
 
-/* Cards */
-.cards{
-  display:grid; gap:16px; grid-template-columns: repeat(3, minmax(0,1fr));
-  max-width:1100px; margin:0 auto;
+.about-box h2 {
+    margin-bottom: 12px;
+    color: #ff4ad8;
+    text-shadow: 0 0 10px #ff00c8;
 }
-.card{
-  background: linear-gradient(180deg, rgba(255,0,200,.08), rgba(255,0,200,.03));
-  border:1px solid rgba(255,0,200,.35);
-  border-radius:16px; padding:18px; box-shadow: 0 0 12px rgba(255,0,200,.15);
-}
-.card h3{margin:0 0 8px;color:#ffe1fb}
-.card-actions{margin-top:12px}
 
-/* Notes */
-.notes-list{max-width:900px;margin:0 auto;display:grid;gap:12px}
-.note{
-  padding:16px;border-radius:14px;background:rgba(255,0,200,.06);
-  border:1px solid rgba(255,0,200,.25);
+.highlight {
+    margin-top: 15px;
+    color: #ff8be7;
+    font-weight: 600;
 }
-.note time{font-size:.85rem;color:#cfa7e6}
-.note h3{margin:.25rem 0 .35rem}
-.note-tip{text-align:center;color:#d7a9e8;margin-top:12px}
-
-/* Socials */
-.socials{display:flex;align-items:center;justify-content:center;gap:14px}
-.icon-btn{
-  width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
-  border:2px solid var(--neon); box-shadow: inset 0 0 8px rgba(255,0,200,.6), 0 0 10px rgba(255,0,200,.5);
-  transition:.3s; text-decoration:none;
-}
-.icon-btn svg{width:22px;height:22px;fill:#fff}
-.icon-btn:hover{transform: translateY(-2px); box-shadow: var(--shadow)}
 
 /* Footer */
-.site-footer{padding:40px 16px;text-align:center;color:#cfa7e6;border-top:1px solid rgba(255,0,200,.15)}
-.site-footer p{margin:0}
-
-/* Responsive */
-@media (max-width: 900px){
-  .cards{grid-template-columns:1fr 1fr}
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #ff7ddb;
+    font-size: 0.9rem;
 }
-@media (max-width: 640px){
-  .cards{grid-template-columns:1fr}
-  #navLinks{position:absolute;right:8px;top:58px;background:rgba(11,6,19,.95);border:1px solid rgba(255,0,200,.25);border-radius:12px;padding:10px 12px;display:none;flex-direction:column}
-  .menu-toggle{display:block}
-  .nav.open #navLinks{display:flex}
-}
-
-/* ===== Fancy hover for nav buttons ===== */
-.btn.neon:hover{
-  box-shadow:
-    0 0 12px rgba(255,0,200,.9),
-    0 0 28px rgba(255,0,200,.6),
-    inset 0 0 18px rgba(255,0,200,.85);
-}
-
-/* ===== Utility ===== */
-.hidden{display:none}
