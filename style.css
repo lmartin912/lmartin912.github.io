@@ -1,98 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
-    margin: 0;
-    background: #080012;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-    color: #fff;
+  margin:0; background:#080012; color:#fff;
+  font-family:Poppins; overflow-x:hidden;
 }
 
-/* Floating cyber stars background */
+/********* BACKGROUND STARS *********/
 canvas#starsCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+  position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
 }
 
-/* Neon glitch title */
+/********* PROFILE PHOTO *********/
+.profile-wrapper {
+  display:flex; justify-content:center; margin-top:50px;
+}
+.profile-photo {
+  width:170px; height:170px; border-radius:50%;
+  object-fit:cover; border:3px solid #ff00c8;
+  box-shadow:0 0 18px #ff00c8,0 0 40px #ff00c8;
+  animation:glow 3s infinite alternate ease-in-out;
+}
+@keyframes glow {
+  from{box-shadow:0 0 10px #ff00c8;}
+  to{box-shadow:0 0 30px #ff00c8, 0 0 60px #ff00c8;}
+}
+
+/********* TITLE *********/
 .glitch {
-    margin-top: 120px;
-    font-size: 3.8rem;
-    font-weight: 700;
-    text-align: center;
-    color: #ff4ad8;
-    text-shadow: 0 0 12px #ff00c8, 0 0 40px #ff00c8;
+  text-align:center; font-size:3rem; font-weight:700; margin-top:12px;
+  color:#ff4ad8; text-shadow:0 0 15px #ff00c8, 0 0 50px #ff00c8;
 }
+.tagline { text-align:center; font-size:1.2rem; color:#ffb6f3; }
 
-/* Tagline */
-.tagline {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #ffb6f3;
-    margin-top: -10px;
-}
-
-/* Buttons */
-.buttons {
-    margin-top: 20px;
-    text-align: center;
-}
-
+/********* BUTTONS *********/
+.buttons{ text-align:center; margin-top:20px; }
 .btn {
-    padding: 12px 28px;
-    margin: 10px;
-    border-radius: 30px;
-    font-size: 1.1rem;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    cursor: pointer;
+  padding:10px 24px; border-radius:30px; margin:10px; font-size:1rem;
+  border:2px solid #ff00c8; text-decoration:none; color:white;
+  box-shadow:0 0 12px #ff00c8, inset 0 0 12px #ff00c8;
 }
+.btn:hover{ background:#ff00c8; }
 
-.neon {
-    border: 2px solid #ff00c8;
-    box-shadow: 0 0 12px #ff00c8, inset 0 0 12px #ff00c8;
-    color: white;
-    transition: .25s;
+/********* ABOUT SECTION *********/
+.about-box, .projects-box {
+  max-width:750px; margin:60px auto; padding:25px; text-align:center;
+  border:1px solid #ff4ad8; border-radius:14px;
+  background:rgba(255,0,200,0.09); box-shadow:0 0 16px #ff00c8;
 }
+.projects-box h2 { margin-bottom:20px; }
 
-.neon:hover {
-    background: #ff00c8;
-    box-shadow: 0 0 18px #ff00c8, 0 0 40px #ff00c8;
+/********* PROJECT GRID *********/
+.project-grid { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; }
+.project-card {
+  width:250px; padding:18px; border:1px solid #ff4ad8;
+  border-radius:10px; background:rgba(255,0,200,0.06);
+  box-shadow:0 0 14px #ff00c8;
 }
+.project-btn {
+  display:inline-block; margin-top:8px; padding:6px 14px;
+  border:1px solid #ff00c8; border-radius:18px; color:#fff;
+}
+.project-btn:hover{ background:#ff00c8; }
 
-/* About box */
-.about-box {
-    max-width: 760px;
-    margin: 60px auto;
-    padding: 28px;
-    background: rgba(255, 0, 200, 0.09);
-    border: 1px solid #ff4ad8;
-    box-shadow: 0 0 18px #ff00c8;
-    border-radius: 14px;
-    text-align: center;
+/********* MUSIC BUTTON *********/
+.music-btn {
+  position:fixed; top:20px; right:20px; z-index:1000;
+  font-size:22px; padding:10px 14px; border-radius:50%;
+  background:#ff00c8; color:white; border:none;
+  box-shadow:0 0 12px #ff00c8;
 }
+.music-btn:hover{ cursor:pointer; }
 
-.about-box h2 {
-    margin-bottom: 12px;
-    color: #ff4ad8;
-    text-shadow: 0 0 10px #ff00c8;
-}
-
-.highlight {
-    margin-top: 15px;
-    color: #ff8be7;
-    font-weight: 600;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #ff7ddb;
-    font-size: 0.9rem;
-}
+/********* FOOTER *********/
+footer{text-align:center; padding:20px; color:#ff7ddb;}
